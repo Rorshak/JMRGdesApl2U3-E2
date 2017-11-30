@@ -1,18 +1,18 @@
 package jmrg.model;
 
-public class Automovil {
+public class Automovile {
 	private int id;
-	private String marca;
-	private String modelo;
+	private String mark;
+	private String model;
 	private int year;
-	public Automovil(int id, String marca, String modelo, int year) {
+	public Automovile(int id, String mark, String model, int year) {
 		super();
 		this.id = id;
-		this.marca = marca;
-		this.modelo = modelo;
+		this.mark = mark;
+		this.model = model;
 		this.year = year;
 	}
-	public Automovil() {
+	public Automovile() {
 		this(0, "","",0);
 		
 		// TODO Auto-generated constructor stub
@@ -30,28 +30,28 @@ public class Automovil {
 		this.id = id;
 	}
 	/**
-	 * @return the marca
+	 * @return the mark
 	 */
-	public String getMarca() {
-		return marca;
+	public String getMark() {
+		return mark;
 	}
 	/**
-	 * @param marca the marca to set
+	 * @param mark the mark to set
 	 */
-	public void setMarca(String marca) {
-		this.marca = marca;
+	public void setMark(String mark) {
+		this.mark = mark;
 	}
 	/**
-	 * @return the modelo
+	 * @return the model
 	 */
-	public String getModelo() {
-		return modelo;
+	public String getModel() {
+		return model;
 	}
 	/**
-	 * @param modelo the modelo to set
+	 * @param model the model to set
 	 */
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
+	public void setModel(String model) {
+		this.model = model;
 	}
 	/**
 	 * @return the year
@@ -70,7 +70,7 @@ public class Automovil {
 	 */
 	@Override
 	public String toString() {
-		return "Automovil [id=" + id + ", marca=" + marca + ", modelo=" + modelo + ", year=" + year
+		return "Automovile [id=" + id + ", mark=" + mark + ", model=" + model + ", year=" + year
 				+ "]";
 	}
 	

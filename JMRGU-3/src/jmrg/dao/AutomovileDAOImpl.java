@@ -11,19 +11,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import jmrg.model.Automovil;
+import jmrg.model.Automovile;
 
 
 /**
  * @author Chema
  *
  */
-public class AutomovilDAOImpl implements AutomovilDAO {
+public class AutomovileDAOImpl implements AutomovileDAO {
 	private Connection connection;
 	private PreparedStatement prepareStatement;
 	private ResultSet resultSet;
 
-	public AutomovilDAOImpl() {
+	public AutomovileDAOImpl() {
 		getConnection();
 	}
 
@@ -40,14 +40,14 @@ public class AutomovilDAOImpl implements AutomovilDAO {
 	}
 
 	@Override
-	public void createAutomovil(Automovil automovil) {
+	public void createAutomovile(Automovile automovile) {
 		if (connection != null) {
 			try {
 				prepareStatement = connection
 						.prepareStatement("INSERT INTO automovil (marca,modelo,year) values(?,?,?);");
-				prepareStatement.setString(1, automovil.getMarca());
-				prepareStatement.setString(2, automovil.getModelo());
-				prepareStatement.setInt(3, automovil.getYear());
+				prepareStatement.setString(1, automovile.getMark());
+				prepareStatement.setString(2, automovile.getModel());
+				prepareStatement.setInt(3, automovile.getYear());
 				
 				prepareStatement.execute();
 			} catch (SQLException e) {
@@ -57,53 +57,53 @@ public class AutomovilDAOImpl implements AutomovilDAO {
 	}
 
 	@Override
-	public Automovil readAutomovil(int id) {
-		Automovil automovil = null;
+	public Automovile readAutomovile(int id) {
+		Automovile automovile = null;
 		if (connection != null) {
 			try {
 				prepareStatement = connection.prepareStatement("SELECT * FROM automovil WHERE id=?;");
 				prepareStatement.setInt(1, id);
 				resultSet = prepareStatement.executeQuery();
 				if (resultSet.next()) {
-					automovil = new Automovil(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
+					automovile = new Automovile(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
 							 resultSet.getInt(4));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		return automovil;
+		return automovile;
 	}
 
 	@Override
-	public List<Automovil> readAllAutomovils() {
-		List<Automovil> automovils = new ArrayList<Automovil>();
+	public List<Automovile> readAllAutomovils() {
+		List<Automovile> automoviles = new ArrayList<Automovile>();
 		if (connection != null) {
 			try {
 				prepareStatement = connection.prepareStatement("SELECT * FROM automovil;");
 				resultSet = prepareStatement.executeQuery();
 				while (resultSet.next()) {
-					Automovil automovil = new Automovil(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
+					Automovile automovile = new Automovile(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
 							 resultSet.getInt(4));
-					automovils.add(automovil);
+					automoviles.add(automovile);
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		return automovils;
+		return automoviles;
 	}
 
 	@Override
-	public void updateAutomovil(Automovil automovil) {
+	public void updateAutomovile(Automovile automovile) {
 		if (connection != null) {
 			try {
 				prepareStatement = connection
 						.prepareStatement("UPDATE automovil  SET marca = ?, modelo=?, year=?  WHERE id=?;");
-				prepareStatement.setString(1, automovil.getMarca());
-				prepareStatement.setString(2, automovil.getModelo());
-				prepareStatement.setInt(3, automovil.getYear());
-				prepareStatement.setInt(4, automovil.getId());
+				prepareStatement.setString(1, automovile.getMark());
+				prepareStatement.setString(2, automovile.getModel());
+				prepareStatement.setInt(3, automovile.getYear());
+				prepareStatement.setInt(4, automovile.getId());
 				prepareStatement.execute();
 				
 			} catch (SQLException e) {
@@ -113,7 +113,7 @@ public class AutomovilDAOImpl implements AutomovilDAO {
 	}
 
 	@Override
-	public void deleteAutomovil(int id) {
+	public void deleteAutomovile(int id) {
 		if (connection != null) {
 			try {
 				prepareStatement = connection.prepareStatement("DELETE FROM automovil  WHERE id=?;");

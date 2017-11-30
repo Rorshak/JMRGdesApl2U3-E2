@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import jmrg.dao.AutomovilDAO;
-import jmrg.dao.AutomovilDAOImpl;
+import jmrg.dao.AutomovileDAO;
+import jmrg.dao.AutomovileDAOImpl;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -23,18 +23,18 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 
 /**
- * Servlet implementation class AutomovilReport
+ * Servlet implementation class AutomovileReport
  */
-@WebServlet("/AutomovilReport")
-public class AutomovilReport extends HttpServlet {
+@WebServlet("/AutomovileReport")
+public class AutomovileReport extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private AutomovilDAOImpl dao;
+    private AutomovileDAOImpl dao;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AutomovilReport() {
+    public AutomovileReport() {
         super();
-        dao = new AutomovilDAOImpl();
+        dao = new AutomovileDAOImpl();
     }
 
 	/**

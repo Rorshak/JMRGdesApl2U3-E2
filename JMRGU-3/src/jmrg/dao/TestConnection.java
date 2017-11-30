@@ -1,11 +1,11 @@
 package jmrg.dao;
 
-import jmrg.model.Automovil;
+import jmrg.model.Automovile;
 
 public class TestConnection {
 	public static void main(String[] args) {
-		AutomovilDAOImpl automovilDAOImpl = new AutomovilDAOImpl();
-		automovilDAOImpl.deleteAutomovil(1);
-		//automovilDAOImpl.createAutomovil(new  Automovil( 1,"mercedes benz", "hola",2017));
+		AutomovileDAOImpl automovileDAOImpl = new AutomovileDAOImpl();
+		automovileDAOImpl.deleteAutomovile(1);
+		//automovilDAOImpl.createAutomovil(new  Automovile( 1,"mercedes benz", "hola",2017));
 	}
 }

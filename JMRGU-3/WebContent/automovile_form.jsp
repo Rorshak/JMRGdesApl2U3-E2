@@ -4,18 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Automovil Form</title>
+<title>Automovile Form</title>
 </head>
 <body>
-	<form action="AutomovilController">
-		<label>Marca:</label><br />
-		<input type="text" name="marca" value="${automovil.marca}" /><br />
+	<form action="AutomovileController">
+		<label>Mark:</label><br />
+		<input type="text" name="mark" value="${automovile.mark}" /><br />
 		
-		<label>Modelo:</label><br />
-		<input type="text" name="modelo" value="${automovil.modelo}" /><br />
+		<label>Model:</label><br />
+		<input type="text" name="model" value="${automovile.model}" /><br />
 		
 		<label>Year:</label><br />
-		<input type="number" name="year" value="${automovil.year}" /><br />
+		<input type="number" name="year" value="${automovile.year}" /><br />
 		
 	
 		<br />
